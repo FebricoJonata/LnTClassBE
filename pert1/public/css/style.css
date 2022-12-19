@@ -1,0 +1,13 @@
+p {
+    width: 50%;
+    background-color: yellow;
+}
+
+.heading {
+    text-align: center;
+}
+
+#form {
+    text-transform: uppercase;
+    background-color: blue;
+}

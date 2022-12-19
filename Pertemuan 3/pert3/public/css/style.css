@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 160px;
+    position: fixed;
+    width: 100%;
+}
+
+#navbar .nav-links {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+}
+
+#navbar .nav-links a {
+    color: #cee4ff;
+}
+
+#navbar .sign-up {
+    background-color: #82b0f0;
+    color: #0f3d91;
+    padding: 16px 32px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 32px 300px;
+    background-image: url("/asset/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #cee4ff;
+    gap: 40px;
+}
+
+#hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#hero .hero-text .text-top h1 {
+    font-size: 56px;
+}
+
+#hero .hero-text .text-middle {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#hero .hero-text .text-middle .middle-content h1 {
+    font-size: 32px;
+}
+
+#hero .get-started {
+    background-color: #cee4ff;
+    color: #0f3d91;
+    padding: 16px 32px;
+    border-radius: 7px;
+    font-weight: 600;
+    width: fit-content;
+}
