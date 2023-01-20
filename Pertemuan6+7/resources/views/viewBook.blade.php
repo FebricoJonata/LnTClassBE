@@ -34,6 +34,7 @@
                             <th scope="col">Author</th>
                             <th scope="col">Price</th>
                             <th scope="col">Release</th>
+                            <th scope="col">Category</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -46,6 +47,7 @@
                                 <td>Rp. {{ $buku->price }}</td>
                                 <td>{{ $buku->author }}</td>
                                 <td>{{ $buku->release }}</td>
+                                <td>{{ $buku->category->category_name}}</td>
                                 <td>
                                     <a href="/update-book/{{ $buku->id }}"><button type="submit"
                                         class="btn btn-success col-md">Edit</button></a>

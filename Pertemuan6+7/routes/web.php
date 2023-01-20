@@ -31,3 +31,6 @@ Route::patch('/update-book/{id}', [BukuController::class, 'updateBook'])->name('
 
 //Delete
 Route::delete('/delete-book/{id}', [BukuController::class, 'deleteBook'])->name('delete');
+
+//Category
+Route::post('/create-book-category', [BukuController::class, 'createCategory'])->name('createCategory');

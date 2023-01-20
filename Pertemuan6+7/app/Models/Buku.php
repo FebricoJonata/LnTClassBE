@@ -9,5 +9,9 @@ class Buku extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['title', 'author', 'price', 'release'];
+    protected $fillable = ['title', 'author', 'price', 'release', 'category_id'];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

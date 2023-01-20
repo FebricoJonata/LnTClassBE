@@ -39,8 +39,34 @@
                             placeholder="Input Date release of Book">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="Category" class="form-label">Category of Item</label>
+                        <div class="" style="">
+                            @foreach ($categories as $category)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineCheckbox1" value="<?= $category['id'] ?>" name="category_id">
+                                <label class="form-check-label" for="inlineCheckbox1"><?= $category['category_name'] ?></label>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+
                     <button type="submit" class="btn btn-success">Insert</button>
                 </form>
+
+                <form action="{{ route('createCategory') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="category_name" class="form-label">Category of Book</label>
+                        <input name="category_name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input Author of Book">
+    
+    
+                    </div>
+    
+                    <button type="submit" class="btn btn-success">Insert</button>
+                </form>
+                
             </div>
         </div>
     </div>

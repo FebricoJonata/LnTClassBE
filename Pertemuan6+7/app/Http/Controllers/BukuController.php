@@ -3,25 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buku;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('createPage');
+        $categories = Category::all();
+        return view('createPage',['categories' => $categories]);
+        // return view('createPage');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function createBook(Request $request)
     {
         Buku::create([
@@ -29,14 +25,33 @@ class BukuController extends Controller
             'author' => $request->author,
             'price' => $request->price,
             'release' => $request->release,
+            'category_id' => $request->category_id,
+
         ]);
     }
 
     public function getBooks()
     {
-        $bukus = Buku::all();
-        return view('viewBook', ['bukus' => $bukus]);
+        // $bukus = Buku::all();
+        // return view('viewBook', ['bukus' => $bukus]);
+        $bukus = Buku::with('category')->get();
+        $categories = Category::with('book')->get();
+
+        return view('viewBook', compact('bukus', 'categories'));
+
     }
+
+    public function createCategory(Request $request){
+
+
+        $category = Category::create([
+            'category_name' => $request->category_name,
+        ]);
+
+
+        return redirect(route('getBooks'));
+    }
+
 
 
     public function getBookById($id) {
